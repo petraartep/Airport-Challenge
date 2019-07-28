@@ -1,4 +1,4 @@
-# :plane: Airport Challeng :plane:e
+# :airplane: Airport Challenge :airplane:
 
 
 ## User Stories
