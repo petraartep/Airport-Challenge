@@ -1,5 +1,8 @@
 # :airplane: Airport Challenge :airplane:
 
+[![Build Status](https://travis-ci.org/petraartep/Airport-Challenge.svg?branch=master)](https://travis-ci.org/petraartep/Airport-Challenge)
+
+
 
 ## User Stories
 
