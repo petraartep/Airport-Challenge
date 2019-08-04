@@ -9,4 +9,9 @@ RSpec.describe Airport do
     end
   end
 
+  describe "#takeoff" do
+    it "instructs plane to take-off" do
+      expect(airport).to respond_to(:takeoff).with(1).argument
+    end
+  end
 end
