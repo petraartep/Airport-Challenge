@@ -43,6 +43,12 @@
         1,
         null,
         null,
+        1,
+        null,
+        1,
+        43,
+        null,
+        null,
         null
       ],
       "/Users/petra/Google Drive/projects/challenges/airport/spec/feature_spec.rb": [
@@ -116,6 +122,6 @@
         null
       ]
     },
-    "timestamp": 1565036624
+    "timestamp": 1565045257
   }
 }
