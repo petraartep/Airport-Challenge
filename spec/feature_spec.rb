@@ -4,7 +4,7 @@ RSpec.describe "User Stories" do
 # So planes can land safely at my airport
 # I would like to instruct a plane to land
   it "instruct a plane to land" do
-    airport = Airport.new
+    airport = Airport.new(20)
     plane = Plane.new
     expect { airport.land(plane) }.not_to raise_error
   end
@@ -13,15 +13,22 @@ RSpec.describe "User Stories" do
 # So planes can take off safely from my airport
 # I would like to instruct a plane to take off
   it "instructs plane to take off" do
-    airport = Airport.new
+    airport = Airport.new(20)
     plane = Plane.new
     expect { airport.takeoff(plane) }.not_to raise_error 
   end
 
-
 # As an air traffic controller
 # So that I can avoid collisions
-# I want to prevent airplanes landing when my airport if full
+# I want to prevent airplanes landing when my airport is full
+  it "prevents planes landing when airport full" do
+    airport = Airport.new(20)
+    plane = Plane.new
+    20.times do
+      airport.land(plane)
+    end
+    expect { airport.land(plane) }.to raise_error "Cannot land plane: airport full" 
+  end 
 
 # As an air traffic controller
 # So that I can avoid accidents
