@@ -12,6 +12,7 @@ class Airport
   end
 
   def takeoff(plane)
+    raise "Cannot take-off plane: weather is stormy" if stormy?
   end
 
   private
