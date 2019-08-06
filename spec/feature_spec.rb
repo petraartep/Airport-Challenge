@@ -6,6 +6,7 @@ RSpec.describe "User Stories" do
   it "instruct a plane to land" do
     airport = Airport.new(20)
     plane = Plane.new
+    allow(airport).to receive(:stormy?).and_return false
     expect { airport.land(plane) }.not_to raise_error
   end
 
@@ -24,6 +25,7 @@ RSpec.describe "User Stories" do
   it "prevents planes landing when airport full" do
     airport = Airport.new(20)
     plane = Plane.new
+    allow(airport).to receive(:stormy?).and_return false
     20.times do
       airport.land(plane)
     end
@@ -33,6 +35,13 @@ RSpec.describe "User Stories" do
 # As an air traffic controller
 # So that I can avoid accidents
 # I want to prevent airplanes landing or taking off when the weather is stormy
+  it "does not allow planes to land when stormy" do
+    airport = Airport.new(20)
+    plane = Plane.new
+    allow(airport).to receive(:stormy?).and_return true
+    expect { airport.land(plane) }.to raise_error "Cannot land plane: weather is stormy"
+  end
+
 
 # As an air traffic controller
 # So that I can ensure safe take off procedures
